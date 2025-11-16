@@ -1,0 +1,26 @@
+sort=-time
+layer=overlay
+background-color=#0f1218b8
+text-color=#f4f7fb
+border-size=1
+border-color=#ffffff20
+border-radius=14
+width=460
+height=160
+icons=1
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=0
+font=Inconsolata SemiBold 13
+margin=16
+padding=10,18
+
+[urgency=low]
+border-color=#aaaaaa
+
+[urgency=normal]
+border-color=#cceeff
+
+[urgency=critical]
+border-color=#ff7777
+default-timeout=0

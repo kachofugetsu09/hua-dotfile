@@ -1,0 +1,89 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "file_types": {
+    // 文件类型指定
+    "JSONC": ["json"]
+  },
+  "edit_predictions": {
+    "disabled_globs": [],
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+      "enterprise_uri": null
+    },
+    "enabled_in_text_threads": false
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "agent": {
+    "single_file_review": false,
+    "always_allow_tool_actions": true,
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "claude-sonnet-4"
+    }
+  },
+  "icon_theme": "Material Icon Theme",
+  "ui_font_size": 26,
+  "buffer_font_size": 18.0,
+  "buffer_font_family": "Google Sans Code NF",
+  "buffer_font_weight": 700,
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "GitHub Dark Default"
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1500
+    }
+  },
+  "restore_on_startup": "last_workspace",
+  "auto_install_extensions": {
+    "rust": true,
+    "java": true,
+    "go": true,
+    "python": true,
+    "typescript": true,
+    "javascript": true
+  },
+  "show_completions_on_input": true,
+  "show_edit_predictions": true,
+  "auto_update": true,
+  "base_keymap": "JetBrains",
+  "collaboration_panel": {
+    "button": false
+  },
+  "unnecessary_code_fade": 0.7,
+  "current_line_highlight": "all",
+  "lsp_highlight_debounce": 75,
+  "git": {
+    "git_gutter": "tracked_files",
+    "gutter_debounce": null,
+    "inline_blame": {
+      "enabled": false,
+      "delay_ms": 2000,
+      "show_commit_summary": true
+    }
+  },
+  "terminal": {
+    "env": {
+      "EDITOR": "zed --wait"
+    },
+    "font_size": 15
+  },
+  "languages": {
+    "Python": {
+      "interpreter": "./.venv/bin/python"
+    }
+  }
+}
