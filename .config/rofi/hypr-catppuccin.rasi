@@ -1,0 +1,58 @@
+* {
+    font: "Inconsolata SemiBold 13, Noto Sans CJK SC 13";
+    text-color: #f4f7fb;
+    background-color: transparent;
+}
+
+window {
+    location: center;
+    width: 42%;
+    border: 1px;
+    border-color: rgba(255, 255, 255, 0.12);
+    border-radius: 14px;
+    background-color: rgba(15, 18, 24, 0.72);
+    padding: 16px;
+}
+
+inputbar {
+    spacing: 8px;
+    padding: 10px 14px;
+    border: 1px;
+    border-color: rgba(255, 255, 255, 0.12);
+    border-radius: 12px;
+    background-color: rgba(15, 18, 24, 0.72);
+}
+
+listview {
+    padding: 6px;
+    lines: 10;
+    columns: 1;
+    background-color: transparent;
+}
+
+element {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.08);
+}
+
+element normal, element normal active, element normal urgent {
+    text-color: #f4f7fb;
+}
+
+element selected {
+    background-color: #89b4fa;
+    text-color: #0b0f18;
+}
+
+prompt {
+    text-color: #89b4fa;
+}
+
+entry {
+    background-color: transparent;
+}
+
+element-icon {
+    size: 0.85em;
+}

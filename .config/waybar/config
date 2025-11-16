@@ -1,0 +1,143 @@
+{
+    "layer": "top",
+    "exclusive": true,
+    "position": "top",  
+    "spacing": 4,
+    "margin-top": 0,
+    "margin-left": 0,
+    "margin-right": 0,
+    "margin-bottom": 0,
+    "height": 34,
+    "modules-left": ["custom/arch", "hyprland/window", "hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["tray", "pulseaudio", "network", "custom/bluetooth", "custom/process_monitor", "memory", "cpu", "custom/power_profile", "battery", "custom/power"],
+    "hyprland/workspaces": {
+        "format": "{name}",
+        "persistent-workspaces": {
+            "*": 1
+        },
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+    "hyprland/window": {
+        "format": "\uf061 {initialTitle}",
+        "separate-outputs": true
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "interval": 60,
+        "format": "\uf017 {:%m-%d %H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+		"timezone": "Asia/Chongqing",
+        "calendar": {
+            "mode"          : "month",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "mode",
+            "on-click-forward": "tz_up",
+            "on-click-backward": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
+        }
+    },
+    "cpu": {
+        "interval": 1,
+        "format": "\uf2db {usage:2}%",
+        "tooltip": true
+    },
+    "memory": {
+        "interval": 1,
+        "format": "\uf538 {used:0.1f}G",
+        "tooltip": true,
+        "tooltip-format": " RAM: {used:0.2f}G / {total:0.2f}G\nSwap: {swapUsed:0.2f}G / {swapTotal:0.2f}G"
+    },
+    "network": {
+        "interval": 1,
+        "format-wifi": "\uf1eb {essid} ({signalStrength}%)",
+        "format-ethernet": "\uf6ff {ifname}",
+        "format-linked": "\uf059 No IP ({ifname})",
+        "format-disconnected": "\uf071 Disconnected",
+        "tooltip-format": "{ifname} {ipaddr}/{cidr} via {gwaddr}",
+        "format-alt": "\uf6ff {ipaddr}/{cidr}",
+        "format-alt-click": "click-right",
+        "on-click": "kcmshell6 kcm_networkmanagement",
+        "on-click-right": "kcmshell6 kcm_networkmanagement"
+    },
+    "custom/bluetooth": {
+        "exec": "$HOME/.config/waybar/scripts/bluetooth_status.sh",
+        "return-type": "json",
+        "interval": 5,
+        "on-click": "blueman-manager",
+        "on-click-right": "blueman-manager"
+    },
+    "custom/process_monitor": {
+        "format": "\uf0ae",
+        "tooltip": "gnome-system-monitor：查看/结束进程",
+        "on-click": "gnome-system-monitor",
+        "on-click-right": "gnome-system-monitor",
+        "signal": 8
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{icon} {volume:2}%",
+        "format-muted": "\uf6a9",
+        "format-bluetooth": "{icon}\uf294 {volume}%",
+        "format-bluetooth-muted": "\ufa69 {icon}\uf294",
+        "format-icons": {
+            "default": ["\uf026", "\uf027", "\uf028"]
+        },
+        "on-click": "pavucontrol",
+        "on-click-right": "pavucontrol",
+        "ignored-sinks": ["AudioRelay Virtual Sink", "Recorder Sink"]
+    },
+    "battery": {
+        "interval": 15,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "\uf240 {capacity}%",
+        "format-charging": "\uf1e6 {capacity}%",
+        "format-plugged": "\uf1e6 {capacity}%",
+        "format-alt": "{time} \uf017",
+        "format-icons": ["\uf244", "\uf243", "\uf242", "\uf241", "\uf240"],
+        "tooltip": true
+    },
+    "custom/arch": {
+        "format": "\uf303",
+        "tooltip": false
+    },
+    "custom/power_profile": {
+        "exec": "$HOME/.config/waybar/scripts/power_profile.sh",
+        "return-type": "json",
+        "interval": 10,
+        "tooltip": true
+    },
+    "custom/power": {
+        "format": "\u23fb",
+        "tooltip": false,
+        "menu": "on-click",
+        "menu-file": "$HOME/.config/waybar/power_menu.xml",
+        "menu-actions": {
+            "shutdown": "poweroff",
+            "reboot": "reboot",
+            "suspend": "systemctl suspend",
+            "hibernate": "systemctl hibernate"
+        }
+    }
+}

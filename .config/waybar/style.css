@@ -1,0 +1,235 @@
+* {
+    font-family: "Inconsolata SemiBold", "Symbols Nerd Font";
+    font-size: 13px;
+    color: #f4f7fb;
+    text-shadow: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+window#waybar {
+    background-color: rgba(15, 18, 24, 0.72);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    margin: 6px 14px 0px 14px;
+    padding: 4px 10px;
+    box-shadow: 0 14px 36px rgba(0, 0, 0, 0.32);
+}
+
+.modules-left,
+.modules-center,
+.modules-right {
+    background-color: transparent;
+    border-radius: 14px;
+    padding: 0px 2px;
+}
+
+.modules-left {
+    background: rgba(15, 18, 24, 0.70);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3px 10px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+    margin-right: 6px;
+}
+
+.modules-center {
+    margin-left: 4px;
+    margin-right: 28px;
+}
+
+.modules-right {
+    background: rgba(15, 18, 24, 0.70);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 3px 10px;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+    margin-left: 34px;
+}
+
+label,
+#clock,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#battery,
+#tray,
+#mode,
+#window,
+#workspaces {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 4px 8px;
+    margin: 1px 3px;
+}
+
+label.warning,
+#battery.warning {
+    color: #f6be5f;
+}
+
+label.critical,
+#battery.critical,
+#network.disconnected {
+    color: #ff6d7a;
+}
+
+#workspaces {
+    padding: 3px 10px;
+    background: rgba(15, 18, 24, 0.18);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#workspaces button {
+    border: 1px solid transparent;
+    border-radius: 6px;
+    padding: 3px 9px;
+    margin: 0px 2px;
+    background: rgba(255, 255, 255, 0.05);
+    color: rgba(235, 239, 246, 0.75);
+    min-width: 24px;
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    font-weight: 600;
+}
+
+#workspaces button label {
+    background: transparent;
+    border-radius: 0;
+    padding: 0;
+    margin: 0;
+    box-shadow: none;
+}
+
+#workspaces button:hover {
+    color: #f5f7ff;
+    border-color: rgba(137, 180, 250, 0.6);
+    background: rgba(137, 180, 250, 0.14);
+}
+
+#workspaces button.empty {
+    background: transparent;
+    color: rgba(235, 239, 246, 0.35);
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+#workspaces button.active {
+    background: #89b4fa;
+    color: #0b0f18;
+    border-color: #b4c9ff;
+    box-shadow: 0 6px 16px rgba(137, 180, 250, 0.35);
+}
+
+#workspaces button.urgent {
+    background: #f38ba8;
+    color: #0b0f18;
+    border-color: #ffd1d9;
+}
+
+#mode {
+    background: rgba(255, 255, 255, 0.12);
+    color: #0d1117;
+}
+
+#clock { color: #e7f5ff; }
+#cpu { color: #ffd6a5; }
+#memory { color: #ffefa0; }
+#network { color: #c2f7f0; }
+#pulseaudio { color: #c9dcff; }
+#battery { color: #d8ffc0; }
+#custom-power_profile { color: #d0ffd7; }
+#window { color: #f5f9ff; }
+
+#tray {
+    padding: 0px 6px;
+    background: transparent;
+}
+
+#pulseaudio,
+#network,
+#memory,
+#cpu,
+#clock,
+#battery,
+#custom-power_profile,
+#custom-process_monitor,
+#custom-power {
+    background: transparent;
+    border-radius: 0;
+    margin: 0;
+    padding: 3px 8px;
+    border: none;
+    box-shadow: none;
+}
+
+#custom-process_monitor,
+#custom-power {
+    color: #f5f7ff;
+}
+
+#custom-arch,
+#custom-arch label,
+#window {
+    color: #89b4fa;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 3px 8px;
+}
+
+#window {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    margin-left: 8px;
+    padding-left: 12px;
+}
+
+#custom-process_monitor:hover,
+#custom-power:hover {
+    color: #89b4fa;
+}
+
+.modules-right > *,
+.modules-right > * label {
+    background: transparent;
+}
+
+.modules-right > * + * {
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    padding-left: 10px;
+    margin-left: 6px;
+}
+
+tooltip {
+    background-color: rgba(15, 18, 24, 0.72);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    padding: 8px 12px;
+    font-size: 15px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+menu,
+window.menu,
+menu * {
+    background: #f5f7fb;
+    color: #0c0f18;
+    border-radius: 8px;
+    padding: 4px 4px;
+}
+
+menu menuitem,
+menuitem,
+menuitem * {
+    padding: 2px 8px;
+    background: transparent;
+    color: inherit;
+}
+
+menuitem:hover,
+menuitem:focus,
+menuitem:hover * {
+    background: rgba(137, 180, 250, 0.2);
+    color: #0c0f18;
+}

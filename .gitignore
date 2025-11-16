@@ -1,0 +1,7 @@
+*.bak*
+*~
+*.swp
+*.tmp
+.DS_Store
+.config/hypr/hyprland-wiki/
+.config/waybar/Waybar.wiki/
