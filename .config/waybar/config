@@ -10,7 +10,7 @@
     "height": 34,
     "modules-left": ["custom/arch", "hyprland/window", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["tray", "pulseaudio", "network", "custom/bluetooth", "custom/process_monitor", "memory", "cpu", "custom/power_profile", "battery", "custom/power"],
+    "modules-right": ["custom/screenshot", "tray", "pulseaudio", "network", "custom/bluetooth", "custom/btop", "memory", "cpu", "custom/power_profile", "backlight", "battery", "custom/power"],
     "hyprland/workspaces": {
         "format": "{name}",
         "persistent-workspaces": {
@@ -67,7 +67,7 @@
     },
     "network": {
         "interval": 1,
-        "format-wifi": "\uf1eb {essid} ({signalStrength}%)",
+        "format-wifi": "\uf1eb",
         "format-ethernet": "\uf6ff {ifname}",
         "format-linked": "\uf059 No IP ({ifname})",
         "format-disconnected": "\uf071 Disconnected",
@@ -84,11 +84,10 @@
         "on-click": "blueman-manager",
         "on-click-right": "blueman-manager"
     },
-    "custom/process_monitor": {
+    "custom/btop": {
         "format": "\uf0ae",
-        "tooltip": "gnome-system-monitor：查看/结束进程",
-        "on-click": "gnome-system-monitor",
-        "on-click-right": "gnome-system-monitor",
+        "tooltip": "新空白工作区打开 btop",
+        "on-click": "bash -lc 'hyprctl dispatch workspace empty; kitty -e btop'",
         "signal": 8
     },
     "pulseaudio": {
@@ -103,6 +102,11 @@
         "on-click": "pavucontrol",
         "on-click-right": "pavucontrol",
         "ignored-sinks": ["AudioRelay Virtual Sink", "Recorder Sink"]
+    },
+    "custom/screenshot": {
+        "format": "\uf030",
+        "tooltip": "区域截屏到剪贴板",
+        "on-click": "bash -lc 'grim -g \"$(slurp)\" - | wl-copy'"
     },
     "battery": {
         "interval": 15,
@@ -127,6 +131,13 @@
         "return-type": "json",
         "interval": 10,
         "tooltip": true
+    },
+    "backlight": {
+        "interval": 2,
+        "format": "\uf185 {percent:2}%",
+        "on-scroll-up": "brightnessctl set +5%",
+        "on-scroll-down": "brightnessctl set 5%-",
+        "on-click": "brightnessctl set 50%"
     },
     "custom/power": {
         "format": "\u23fb",

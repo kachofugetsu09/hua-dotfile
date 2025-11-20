@@ -36,7 +36,7 @@
   "ui_font_size": 26,
   "buffer_font_size": 18.0,
   "buffer_font_family": "Google Sans Code NF",
-  "buffer_font_weight": 700,
+  "buffer_font_weight": 650,
   "theme": {
     "mode": "dark",
     "light": "Ayu Light",

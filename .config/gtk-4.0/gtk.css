@@ -1,1 +1,240 @@
 @import 'colors.css';
+
+* {
+    color: @catpp_text;
+    background-clip: padding-box;
+    caret-color: @catpp_accent;
+    outline-color: @catpp_accent;
+    transition: background-color 150ms ease, border-color 150ms ease, color 150ms ease;
+}
+
+window,
+dialog,
+messagedialog,
+.background,
+popover,
+tooltip {
+    background-color: @catpp_base;
+    border: 1px solid @catpp_border;
+    border-radius: 18px;
+    box-shadow: 0 18px 48px @catpp_shadow;
+    padding: 8px;
+}
+
+window:backdrop,
+dialog:backdrop,
+messagedialog:backdrop,
+.background:backdrop,
+popover:backdrop {
+    background-color: @catpp_surface;
+    border-color: @catpp_dim;
+    box-shadow: 0 12px 32px @catpp_shadow;
+}
+
+headerbar,
+.titlebar,
+.sidebar,
+toolbar {
+    background-color: @catpp_surface;
+    color: @catpp_text;
+    border-bottom: 1px solid @catpp_border;
+    border-radius: 16px 16px 12px 12px;
+    box-shadow: 0 12px 32px @catpp_shadow;
+}
+
+headerbar:backdrop,
+.titlebar:backdrop,
+.sidebar:backdrop,
+toolbar:backdrop {
+    background-color: @catpp_surface;
+    border-bottom-color: @catpp_dim;
+    box-shadow: 0 8px 20px @catpp_shadow;
+}
+
+popover,
+tooltip,
+menu,
+menubar,
+menuitem,
+modelbutton,
+notebook,
+.frame,
+card,
+listview,
+stack,
+scrolledwindow {
+    background-color: @catpp_overlay;
+    border: 1px solid @catpp_border;
+    border-radius: 16px;
+    color: @catpp_text;
+}
+
+button,
+combobox button,
+menubutton,
+modelbutton,
+toolbar button,
+.menuitem,
+.stack-switcher button {
+    background-color: @catpp_panel;
+    border: 1px solid @catpp_border;
+    border-radius: 12px;
+    padding: 6px 12px;
+    color: @catpp_text;
+    box-shadow: inset 0 0 0 1px @catpp_dim;
+}
+
+button:hover,
+combobox button:hover,
+menubutton:hover,
+modelbutton:hover,
+toolbar button:hover,
+.menuitem:hover,
+.stack-switcher button:hover {
+    background-color: @catpp_panel_hover;
+    border-color: @catpp_border_strong;
+}
+
+button:checked,
+combobox button:checked,
+menubutton:checked,
+modelbutton:checked,
+.stack-switcher button:checked {
+    background-color: @catpp_accent;
+    border-color: @catpp_accent_soft;
+    color: @catpp_base_strong;
+    box-shadow: 0 6px 16px rgba(137,180,250,0.35);
+}
+
+entry,
+spinbutton,
+textview,
+treeview.view,
+listview row,
+combobox,
+notebook > stack,
+progressbar trough,
+scale trough,
+scrollbar trough {
+    background-color: @catpp_overlay;
+    border: 1px solid @catpp_border;
+    border-radius: 14px;
+    color: @catpp_text;
+    padding: 4px 8px;
+    box-shadow: inset 0 1px 0 @catpp_dim;
+}
+
+entry:focus,
+spinbutton:focus,
+textview:focus-within,
+combobox:focus {
+    border-color: @catpp_accent_soft;
+    box-shadow: 0 0 0 1px @catpp_accent inset;
+}
+
+listview row {
+    margin: 2px 4px;
+    background-color: transparent;
+}
+
+listview row:selected,
+treeview.view:selected,
+*:selected,
+selection,
+textview text selection {
+    background-color: @catpp_accent;
+    color: @catpp_base_strong;
+}
+
+progressbar progress,
+scale highlight,
+levelbar block.filled {
+    background-color: @catpp_accent;
+    border-radius: 10px;
+}
+
+switch {
+    background-color: @catpp_overlay;
+    border: 1px solid @catpp_border;
+    border-radius: 20px;
+    padding: 2px;
+}
+
+switch slider {
+    background-color: @catpp_panel;
+    border-radius: 16px;
+    box-shadow: 0 4px 14px @catpp_shadow;
+}
+
+switch:checked {
+    background-color: @catpp_accent;
+    border-color: @catpp_accent_soft;
+}
+
+switch:checked slider {
+    background-color: @catpp_base_strong;
+}
+
+check,
+radio {
+    border: 2px solid @catpp_border;
+    border-radius: 6px;
+    background-color: @catpp_overlay;
+}
+
+check:checked,
+radio:checked {
+    border-color: @catpp_accent;
+    background-color: @catpp_accent;
+    color: @catpp_base_strong;
+}
+
+scrollbar slider {
+    background-color: @catpp_panel;
+    border-radius: 12px;
+    min-width: 12px;
+    min-height: 12px;
+    box-shadow: inset 0 0 0 1px @catpp_dim;
+}
+
+scrollbar slider:hover {
+    background-color: @catpp_panel_hover;
+}
+
+separator,
+menubar separator {
+    background-color: @catpp_border;
+}
+
+label.dim-label,
+.placeholder-text {
+    color: @catpp_muted;
+}
+
+label.warning,
+.warning {
+    color: @catpp_warning;
+}
+
+label.error,
+.error,
+entry.error {
+    color: @catpp_error;
+    border-color: @catpp_error;
+}
+
+.success,
+label.success {
+    color: @catpp_success;
+}
+
+link,
+label.link {
+    color: @catpp_accent;
+}
+
+revealer,
+expander,
+undershoot {
+    background-color: transparent;
+}

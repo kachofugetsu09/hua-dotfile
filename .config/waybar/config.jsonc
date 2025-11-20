@@ -19,6 +19,7 @@
         "mpd",
         "idle_inhibitor",
         "pulseaudio",
+        "custom/screenshot",
         "network",
         "cpu",
         "memory",
@@ -189,6 +190,11 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/screenshot": {
+        "format": "",
+        "tooltip": "区域截屏到剪贴板",
+        "on-click": "bash -lc 'grim -g "$(slurp)" - | wl-copy'"
     },
     "custom/media": {
         "format": "{icon} {text}",
