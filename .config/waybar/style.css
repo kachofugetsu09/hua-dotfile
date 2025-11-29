@@ -167,6 +167,102 @@ label.critical,
     color: #f5f7ff;
 }
 
+#group-tools_block,
+#group-control_block,
+#group-power_block {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 4px 10px;
+    margin: 1px 6px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#group-tools_block > *,
+#group-control_block > *,
+#group-power_block > * {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+
+#group-tools_block {
+    padding-right: 14px;
+}
+
+#group-control_block {
+    padding-left: 14px;
+    padding-right: 14px;
+}
+
+#group-control_drawers {
+    padding: 0 6px;
+    margin: 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.08);
+    border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+#group-status_drawer,
+#group-perf_drawer {
+    margin: 0 4px;
+}
+
+#group-status_drawer .status-child,
+#group-perf_drawer .perf-child {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    margin-top: 4px;
+    padding-top: 4px;
+}
+
+#group-status_drawer .status-child:first-child,
+#group-perf_drawer .perf-child:first-child {
+    border-top: none;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#custom-status_toggle,
+#custom-perf_toggle {
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 4px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#custom-status_toggle {
+    color: #cdd6f4;
+}
+
+#custom-perf_toggle {
+    color: #ffd6a5;
+}
+
+#group-status_drawer #pulseaudio,
+#group-status_drawer #backlight {
+    color: #cdd6f4;
+}
+
+#group-status_drawer #network,
+#group-status_drawer #custom-bluetooth {
+    color: #b5ffe6;
+}
+
+#group-perf_drawer #cpu,
+#group-perf_drawer #memory {
+    color: #ffefa0;
+}
+
+#group-perf_drawer #custom-btop {
+    color: #ffb86c;
+}
+
+
+
+#custom-btop {
+    color: #ffb86c;
+}
+
 #custom-arch,
 #custom-arch label,
 #window {

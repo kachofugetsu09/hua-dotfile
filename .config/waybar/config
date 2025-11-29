@@ -10,7 +10,7 @@
     "height": 34,
     "modules-left": ["custom/arch", "hyprland/window", "hyprland/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["custom/screenshot", "tray", "pulseaudio", "network", "custom/bluetooth", "custom/btop", "memory", "cpu", "custom/power_profile", "backlight", "battery", "custom/power"],
+    "modules-right": ["group/tools_block", "group/control_block", "group/power_block"],
     "hyprland/workspaces": {
         "format": "{name}",
         "persistent-workspaces": {
@@ -27,6 +27,63 @@
     "tray": {
         "icon-size": 21,
         "spacing": 10
+    },
+    "group/tools_block": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/screenshot",
+            "tray"
+        ]
+    },
+    "group/control_block": {
+        "orientation": "horizontal",
+        "modules": [
+            "group/control_drawers"
+        ]
+    },
+    "group/power_block": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/power_profile",
+            "battery",
+            "custom/power"
+        ]
+    },
+    "group/control_drawers": {
+        "orientation": "horizontal",
+        "modules": [
+            "group/status_drawer",
+            "group/perf_drawer"
+        ]
+    },
+    "group/status_drawer": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "status-child",
+            "click-to-reveal": true
+        },
+        "modules": [
+            "custom/status_toggle",
+            "pulseaudio",
+            "backlight",
+            "network",
+            "custom/bluetooth"
+        ]
+    },
+    "group/perf_drawer": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "perf-child",
+            "click-to-reveal": true
+        },
+        "modules": [
+            "custom/perf_toggle",
+            "cpu",
+            "memory",
+            "custom/btop"
+        ]
     },
     "clock": {
         "interval": 60,
@@ -85,10 +142,18 @@
         "on-click-right": "blueman-manager"
     },
     "custom/btop": {
-        "format": "\uf0ae",
+        "format": "\uf201",
         "tooltip": "新空白工作区打开 btop",
-        "on-click": "bash -lc 'hyprctl dispatch workspace empty; kitty -e btop'",
+        "on-click": "$HOME/.config/waybar/scripts/launch_btop_workspace.py",
         "signal": 8
+    },
+    "custom/status_toggle": {
+        "format": "\uf013 CTRL",
+        "tooltip": "点击展开系统状态"
+    },
+    "custom/perf_toggle": {
+        "format": "\uf108 PERF",
+        "tooltip": "点击展开性能监控"
     },
     "pulseaudio": {
         "scroll-step": 5,
