@@ -131,15 +131,15 @@
         "tooltip-format": "{ifname} {ipaddr}/{cidr} via {gwaddr}",
         "format-alt": "\uf6ff {ipaddr}/{cidr}",
         "format-alt-click": "click-right",
-        "on-click": "kcmshell6 kcm_networkmanagement",
-        "on-click-right": "kcmshell6 kcm_networkmanagement"
+        "on-click": "better-control --wifi",
+        "on-click-right": "better-control --wifi"
     },
     "custom/bluetooth": {
         "exec": "$HOME/.config/waybar/scripts/bluetooth_status.sh",
         "return-type": "json",
         "interval": 5,
-        "on-click": "blueman-manager",
-        "on-click-right": "blueman-manager"
+        "on-click": "better-control --bluetooth",
+        "on-click-right": "better-control --bluetooth"
     },
     "custom/btop": {
         "format": "\uf201",
@@ -157,15 +157,15 @@
     },
     "pulseaudio": {
         "scroll-step": 5,
-        "format": "{icon} {volume:2}%",
+        "format": "{icon}",
         "format-muted": "\uf6a9",
         "format-bluetooth": "{icon}\uf294 {volume}%",
         "format-bluetooth-muted": "\ufa69 {icon}\uf294",
         "format-icons": {
             "default": ["\uf026", "\uf027", "\uf028"]
         },
-        "on-click": "pavucontrol",
-        "on-click-right": "pavucontrol",
+        "on-click": "better-control --volume",
+        "on-click-right": "better-control --volume",
         "ignored-sinks": ["AudioRelay Virtual Sink", "Recorder Sink"]
     },
     "custom/screenshot": {
@@ -199,10 +199,11 @@
     },
     "backlight": {
         "interval": 2,
-        "format": "\uf185 {percent:2}%",
+        "format": "{icon}",
+        "format-icons": ["\uf186", "\uf185", "\uf0eb"],
         "on-scroll-up": "brightnessctl set +5%",
         "on-scroll-down": "brightnessctl set 5%-",
-        "on-click": "brightnessctl set 50%"
+        "on-click": "better-control --display"
     },
     "custom/power": {
         "format": "\u23fb",
