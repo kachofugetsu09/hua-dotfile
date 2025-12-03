@@ -7,10 +7,10 @@
     "margin-left": 0,
     "margin-right": 0,
     "margin-bottom": 0,
-    "height": 34,
-    "modules-left": ["custom/arch", "hyprland/window", "hyprland/workspaces"],
-    "modules-center": ["clock"],
-    "modules-right": ["group/tools_block", "group/control_block", "group/power_block"],
+    "height": 30,
+    "modules-left": ["group/left_cluster"],
+    "modules-center": ["group/time_cluster"],
+    "modules-right": ["group/system_panel"],
     "hyprland/workspaces": {
         "format": "{name}",
         "persistent-workspaces": {
@@ -28,61 +28,44 @@
         "icon-size": 21,
         "spacing": 10
     },
-    "group/tools_block": {
+    "group/left_cluster": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/arch",
+            "hyprland/window",
+            "hyprland/workspaces"
+        ]
+    },
+    "group/time_cluster": {
+        "orientation": "horizontal",
+        "modules": [
+            "clock"
+        ]
+    },
+    "group/system_panel": {
+        "orientation": "horizontal",
+        "modules": [
+            "group/tray_section",
+            "group/connect_section",
+            "battery",
+            "custom/power_profile",
+            "custom/power"
+        ]
+    },
+    "group/tray_section": {
         "orientation": "horizontal",
         "modules": [
             "custom/screenshot",
             "tray"
         ]
     },
-    "group/control_block": {
+    "group/connect_section": {
         "orientation": "horizontal",
         "modules": [
-            "group/control_drawers"
-        ]
-    },
-    "group/power_block": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/power_profile",
-            "battery",
-            "custom/power"
-        ]
-    },
-    "group/control_drawers": {
-        "orientation": "horizontal",
-        "modules": [
-            "group/status_drawer",
-            "group/perf_drawer"
-        ]
-    },
-    "group/status_drawer": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 300,
-            "children-class": "status-child",
-            "click-to-reveal": true
-        },
-        "modules": [
-            "custom/status_toggle",
             "pulseaudio",
-            "backlight",
             "network",
-            "custom/bluetooth"
-        ]
-    },
-    "group/perf_drawer": {
-        "orientation": "inherit",
-        "drawer": {
-            "transition-duration": 300,
-            "children-class": "perf-child",
-            "click-to-reveal": true
-        },
-        "modules": [
-            "custom/perf_toggle",
-            "cpu",
-            "memory",
-            "custom/btop"
+            "custom/bluetooth",
+            "backlight"
         ]
     },
     "clock": {

@@ -16,22 +16,37 @@
         "hyprland/window"
     ],
     "modules-right": [
-        "mpd",
-        "idle_inhibitor",
-        "pulseaudio",
-        "custom/screenshot",
-        "network",
-        "cpu",
-        "memory",
-        "temperature",
-        "backlight",
-        "keyboard-state",
-        "battery",
-        "battery#bat2",
-        "clock",
-        "tray",
-        "custom/power"
+        "custom/status_toggle",
+        "group/status_island",
+        "custom/perf_toggle",
+        "group/power_island"
     ],
+    "group/status_island": {
+        "orientation": "horizontal",
+        "modules": [
+            "mpd",
+            "idle_inhibitor",
+            "pulseaudio",
+            "custom/screenshot",
+            "network",
+            "cpu",
+            "memory",
+            "temperature",
+            "backlight",
+            "keyboard-state",
+            "tray"
+        ]
+    },
+    "group/power_island": {
+        "orientation": "horizontal",
+        "modules": [
+            "battery",
+            "battery#bat2",
+            "power-profiles-daemon",
+            "clock",
+            "custom/power"
+        ]
+    },
     // Modules configuration
     // "hyprland/workspaces": {
     //     "disable-scroll": true,
@@ -108,6 +123,14 @@
         //   "blueman": "bluetooth",
         //   "TelegramDesktop": "$HOME/.local/share/icons/hicolor/16x16/apps/telegram.png"
         // }
+    },
+    "custom/status_toggle": {
+        "format": "CTRL",
+        "tooltip": "系统控制区"
+    },
+    "custom/perf_toggle": {
+        "format": "PERF",
+        "tooltip": "性能监控区"
     },
     "clock": {
         // "timezone": "America/New_York",
