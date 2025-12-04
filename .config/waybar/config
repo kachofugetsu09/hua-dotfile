@@ -21,7 +21,7 @@
         "on-scroll-down": "hyprctl dispatch workspace e-1"
     },
     "hyprland/window": {
-        "format": "\uf061 {initialTitle}",
+        "format": "\uf061 {class}",
         "separate-outputs": true
     },
     "tray": {
