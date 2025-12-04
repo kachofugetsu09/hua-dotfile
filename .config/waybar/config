@@ -55,8 +55,8 @@
     "group/tray_section": {
         "orientation": "horizontal",
         "modules": [
-            "custom/screenshot",
-            "tray"
+            "tray",
+            "custom/screenshot"
         ]
     },
     "group/connect_section": {
